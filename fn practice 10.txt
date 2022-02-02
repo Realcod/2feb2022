@@ -1,0 +1,27 @@
+/*
+octal to decimal conversion
+*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int octtodec(int n){
+	int o_d=0,power=0;
+	while(n>0){
+		int num=n%10;
+		o_d=o_d+num*pow(8,power);
+		n/=10;
+		power++;
+	}
+	return o_d;
+}
+
+int main(){
+	int n;
+	cout<<"Enter the octal number : "<<endl;
+	cin>>n;
+	
+	int dec=octtodec(n);
+	cout<<dec<<endl;
+}
